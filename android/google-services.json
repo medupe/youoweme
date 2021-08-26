@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "693349106577",
+    "project_id": "authentic-host-302010",
+    "storage_bucket": "authentic-host-302010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693349106577:android:49ce7338fb532126289030",
+        "android_client_info": {
+          "package_name": "com.medtek.gafa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693349106577-9qmppocbce4hlhn6heju1fc53igvq6ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyLTW4MQS7LPa-4asG2iP1qnfZUg65OyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693349106577-9qmppocbce4hlhn6heju1fc53igvq6ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
