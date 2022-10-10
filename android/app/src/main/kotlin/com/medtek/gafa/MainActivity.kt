@@ -1,4 +1,4 @@
-package com.example.wankolota
+package com.medtek.gafa
 
 import io.flutter.embedding.android.FlutterActivity
 

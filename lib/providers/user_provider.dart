@@ -7,10 +7,10 @@ import 'package:wankolota/notifier/user_notifier.dart';
 import 'package:wankolota/repository/user/userRepository.dart';
 
 final userRepositoryProvider = Provider<UserRepository>(
-  (ref) => UserRepository(),
+  (ref) => UserRepository(ref.read),
 );
 
 final userNotifierProvider =
     StateNotifierProvider<UserNotifier, UserApplication>(
-  (ref) => UserNotifier(ref.watch(userRepositoryProvider)),
+  (ref) => UserNotifier(ref.read),
 );

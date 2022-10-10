@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_application.dart';
 
@@ -10,77 +12,69 @@ part of 'user_application.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserApplicationTearOff {
-  const _$UserApplicationTearOff();
-
-  UserData call(AppUser value) {
-    return UserData(
-      value,
-    );
-  }
-
-  UserDataLoaded loaded() {
-    return const UserDataLoaded();
-  }
-
-  UserLoading loading() {
-    return const UserLoading();
-  }
-
-  UserErrorDetails error([String? message]) {
-    return UserErrorDetails(
-      message,
-    );
-  }
-
-  UserInitial initial() {
-    return const UserInitial();
-  }
-}
-
-/// @nodoc
-const $UserApplication = _$UserApplicationTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserApplication {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AppUser value) $default, {
-    required TResult Function() loaded,
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
-    required TResult Function() initial,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AppUser value)? $default, {
-    TResult Function()? loaded,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
-    TResult Function()? initial,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(UserData value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
-    required TResult Function(UserInitial value) initial,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(UserData value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
-    TResult Function(UserInitial value)? initial,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -104,28 +98,31 @@ class _$UserApplicationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $UserDataCopyWith<$Res> {
-  factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
-      _$UserDataCopyWithImpl<$Res>;
+abstract class _$$UserDataLoadedCopyWith<$Res> {
+  factory _$$UserDataLoadedCopyWith(
+          _$UserDataLoaded value, $Res Function(_$UserDataLoaded) then) =
+      __$$UserDataLoadedCopyWithImpl<$Res>;
   $Res call({AppUser value});
 
   $AppUserCopyWith<$Res> get value;
 }
 
 /// @nodoc
-class _$UserDataCopyWithImpl<$Res> extends _$UserApplicationCopyWithImpl<$Res>
-    implements $UserDataCopyWith<$Res> {
-  _$UserDataCopyWithImpl(UserData _value, $Res Function(UserData) _then)
-      : super(_value, (v) => _then(v as UserData));
+class __$$UserDataLoadedCopyWithImpl<$Res>
+    extends _$UserApplicationCopyWithImpl<$Res>
+    implements _$$UserDataLoadedCopyWith<$Res> {
+  __$$UserDataLoadedCopyWithImpl(
+      _$UserDataLoaded _value, $Res Function(_$UserDataLoaded) _then)
+      : super(_value, (v) => _then(v as _$UserDataLoaded));
 
   @override
-  UserData get _value => super._value as UserData;
+  _$UserDataLoaded get _value => super._value as _$UserDataLoaded;
 
   @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(UserData(
+    return _then(_$UserDataLoaded(
       value == freezed
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -143,185 +140,112 @@ class _$UserDataCopyWithImpl<$Res> extends _$UserApplicationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserData implements UserData {
-  const _$UserData(this.value);
+class _$UserDataLoaded implements UserDataLoaded {
+  const _$UserDataLoaded(this.value);
 
   @override
   final AppUser value;
 
   @override
   String toString() {
-    return 'UserApplication(value: $value)';
+    return 'UserApplication.loaded(value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserData &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$UserDataLoaded &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
-  $UserDataCopyWith<UserData> get copyWith =>
-      _$UserDataCopyWithImpl<UserData>(this, _$identity);
+  _$$UserDataLoadedCopyWith<_$UserDataLoaded> get copyWith =>
+      __$$UserDataLoadedCopyWithImpl<_$UserDataLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AppUser value) $default, {
-    required TResult Function() loaded,
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
-    required TResult Function() initial,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
   }) {
-    return $default(value);
+    return loaded(value);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AppUser value)? $default, {
-    TResult Function()? loaded,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
-    TResult Function()? initial,
-    required TResult orElse(),
+    TResult Function()? signedIn,
+    TResult Function()? signout,
   }) {
-    if ($default != null) {
-      return $default(value);
-    }
-    return orElse();
+    return loaded?.call(value);
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(UserData value) $default, {
-    required TResult Function(UserDataLoaded value) loaded,
-    required TResult Function(UserLoading value) loading,
-    required TResult Function(UserErrorDetails value) error,
-    required TResult Function(UserInitial value) initial,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(UserData value)? $default, {
-    TResult Function(UserDataLoaded value)? loaded,
-    TResult Function(UserLoading value)? loading,
-    TResult Function(UserErrorDetails value)? error,
-    TResult Function(UserInitial value)? initial,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserData implements UserApplication {
-  const factory UserData(AppUser value) = _$UserData;
-
-  AppUser get value => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UserDataCopyWith<UserData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UserDataLoadedCopyWith<$Res> {
-  factory $UserDataLoadedCopyWith(
-          UserDataLoaded value, $Res Function(UserDataLoaded) then) =
-      _$UserDataLoadedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$UserDataLoadedCopyWithImpl<$Res>
-    extends _$UserApplicationCopyWithImpl<$Res>
-    implements $UserDataLoadedCopyWith<$Res> {
-  _$UserDataLoadedCopyWithImpl(
-      UserDataLoaded _value, $Res Function(UserDataLoaded) _then)
-      : super(_value, (v) => _then(v as UserDataLoaded));
-
-  @override
-  UserDataLoaded get _value => super._value as UserDataLoaded;
-}
-
-/// @nodoc
-
-class _$UserDataLoaded implements UserDataLoaded {
-  const _$UserDataLoaded();
-
-  @override
-  String toString() {
-    return 'UserApplication.loaded()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserDataLoaded);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AppUser value) $default, {
-    required TResult Function() loaded,
-    required TResult Function() loading,
-    required TResult Function(String? message) error,
-    required TResult Function() initial,
-  }) {
-    return loaded();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AppUser value)? $default, {
-    TResult Function()? loaded,
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
-    TResult Function()? initial,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(value);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(UserData value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
-    required TResult Function(UserInitial value) initial,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
   }) {
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(UserData value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
-    TResult Function(UserInitial value)? initial,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -332,26 +256,160 @@ class _$UserDataLoaded implements UserDataLoaded {
 }
 
 abstract class UserDataLoaded implements UserApplication {
-  const factory UserDataLoaded() = _$UserDataLoaded;
+  const factory UserDataLoaded(final AppUser value) = _$UserDataLoaded;
+
+  AppUser get value;
+  @JsonKey(ignore: true)
+  _$$UserDataLoadedCopyWith<_$UserDataLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserLoadingCopyWith<$Res> {
-  factory $UserLoadingCopyWith(
-          UserLoading value, $Res Function(UserLoading) then) =
-      _$UserLoadingCopyWithImpl<$Res>;
+abstract class _$$UserUnsignedInCopyWith<$Res> {
+  factory _$$UserUnsignedInCopyWith(
+          _$UserUnsignedIn value, $Res Function(_$UserUnsignedIn) then) =
+      __$$UserUnsignedInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserLoadingCopyWithImpl<$Res>
+class __$$UserUnsignedInCopyWithImpl<$Res>
     extends _$UserApplicationCopyWithImpl<$Res>
-    implements $UserLoadingCopyWith<$Res> {
-  _$UserLoadingCopyWithImpl(
-      UserLoading _value, $Res Function(UserLoading) _then)
-      : super(_value, (v) => _then(v as UserLoading));
+    implements _$$UserUnsignedInCopyWith<$Res> {
+  __$$UserUnsignedInCopyWithImpl(
+      _$UserUnsignedIn _value, $Res Function(_$UserUnsignedIn) _then)
+      : super(_value, (v) => _then(v as _$UserUnsignedIn));
 
   @override
-  UserLoading get _value => super._value as UserLoading;
+  _$UserUnsignedIn get _value => super._value as _$UserUnsignedIn;
+}
+
+/// @nodoc
+
+class _$UserUnsignedIn implements UserUnsignedIn {
+  const _$UserUnsignedIn();
+
+  @override
+  String toString() {
+    return 'UserApplication.unsignedIn()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserUnsignedIn);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() unsignedIn,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
+  }) {
+    return unsignedIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+  }) {
+    return unsignedIn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+    required TResult orElse(),
+  }) {
+    if (unsignedIn != null) {
+      return unsignedIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
+    required TResult Function(UserLoading value) loading,
+    required TResult Function(UserErrorDetails value) error,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
+  }) {
+    return unsignedIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) {
+    return unsignedIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+    required TResult orElse(),
+  }) {
+    if (unsignedIn != null) {
+      return unsignedIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserUnsignedIn implements UserApplication {
+  const factory UserUnsignedIn() = _$UserUnsignedIn;
+}
+
+/// @nodoc
+abstract class _$$UserLoadingCopyWith<$Res> {
+  factory _$$UserLoadingCopyWith(
+          _$UserLoading value, $Res Function(_$UserLoading) then) =
+      __$$UserLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserLoadingCopyWithImpl<$Res>
+    extends _$UserApplicationCopyWithImpl<$Res>
+    implements _$$UserLoadingCopyWith<$Res> {
+  __$$UserLoadingCopyWithImpl(
+      _$UserLoading _value, $Res Function(_$UserLoading) _then)
+      : super(_value, (v) => _then(v as _$UserLoading));
+
+  @override
+  _$UserLoading get _value => super._value as _$UserLoading;
 }
 
 /// @nodoc
@@ -366,7 +424,8 @@ class _$UserLoading implements UserLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserLoading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserLoading);
   }
 
   @override
@@ -374,24 +433,39 @@ class _$UserLoading implements UserLoading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AppUser value) $default, {
-    required TResult Function() loaded,
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
-    required TResult Function() initial,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
   }) {
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AppUser value)? $default, {
-    TResult Function()? loaded,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
-    TResult Function()? initial,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -402,24 +476,39 @@ class _$UserLoading implements UserLoading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(UserData value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
-    required TResult Function(UserInitial value) initial,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
   }) {
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(UserData value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
-    TResult Function(UserInitial value)? initial,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -434,29 +523,29 @@ abstract class UserLoading implements UserApplication {
 }
 
 /// @nodoc
-abstract class $UserErrorDetailsCopyWith<$Res> {
-  factory $UserErrorDetailsCopyWith(
-          UserErrorDetails value, $Res Function(UserErrorDetails) then) =
-      _$UserErrorDetailsCopyWithImpl<$Res>;
+abstract class _$$UserErrorDetailsCopyWith<$Res> {
+  factory _$$UserErrorDetailsCopyWith(
+          _$UserErrorDetails value, $Res Function(_$UserErrorDetails) then) =
+      __$$UserErrorDetailsCopyWithImpl<$Res>;
   $Res call({String? message});
 }
 
 /// @nodoc
-class _$UserErrorDetailsCopyWithImpl<$Res>
+class __$$UserErrorDetailsCopyWithImpl<$Res>
     extends _$UserApplicationCopyWithImpl<$Res>
-    implements $UserErrorDetailsCopyWith<$Res> {
-  _$UserErrorDetailsCopyWithImpl(
-      UserErrorDetails _value, $Res Function(UserErrorDetails) _then)
-      : super(_value, (v) => _then(v as UserErrorDetails));
+    implements _$$UserErrorDetailsCopyWith<$Res> {
+  __$$UserErrorDetailsCopyWithImpl(
+      _$UserErrorDetails _value, $Res Function(_$UserErrorDetails) _then)
+      : super(_value, (v) => _then(v as _$UserErrorDetails));
 
   @override
-  UserErrorDetails get _value => super._value as UserErrorDetails;
+  _$UserErrorDetails get _value => super._value as _$UserErrorDetails;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(UserErrorDetails(
+    return _then(_$UserErrorDetails(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -481,40 +570,55 @@ class _$UserErrorDetails implements UserErrorDetails {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserErrorDetails &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _$UserErrorDetails &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
-  $UserErrorDetailsCopyWith<UserErrorDetails> get copyWith =>
-      _$UserErrorDetailsCopyWithImpl<UserErrorDetails>(this, _$identity);
+  _$$UserErrorDetailsCopyWith<_$UserErrorDetails> get copyWith =>
+      __$$UserErrorDetailsCopyWithImpl<_$UserErrorDetails>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AppUser value) $default, {
-    required TResult Function() loaded,
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
-    required TResult Function() initial,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
   }) {
     return error(message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AppUser value)? $default, {
-    TResult Function()? loaded,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
-    TResult Function()? initial,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -525,24 +629,39 @@ class _$UserErrorDetails implements UserErrorDetails {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(UserData value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
-    required TResult Function(UserInitial value) initial,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
   }) {
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(UserData value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
-    TResult Function(UserInitial value)? initial,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -553,46 +672,47 @@ class _$UserErrorDetails implements UserErrorDetails {
 }
 
 abstract class UserErrorDetails implements UserApplication {
-  const factory UserErrorDetails([String? message]) = _$UserErrorDetails;
+  const factory UserErrorDetails([final String? message]) = _$UserErrorDetails;
 
-  String? get message => throw _privateConstructorUsedError;
+  String? get message;
   @JsonKey(ignore: true)
-  $UserErrorDetailsCopyWith<UserErrorDetails> get copyWith =>
+  _$$UserErrorDetailsCopyWith<_$UserErrorDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserInitialCopyWith<$Res> {
-  factory $UserInitialCopyWith(
-          UserInitial value, $Res Function(UserInitial) then) =
-      _$UserInitialCopyWithImpl<$Res>;
+abstract class _$$UserSignedInCopyWith<$Res> {
+  factory _$$UserSignedInCopyWith(
+          _$UserSignedIn value, $Res Function(_$UserSignedIn) then) =
+      __$$UserSignedInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserInitialCopyWithImpl<$Res>
+class __$$UserSignedInCopyWithImpl<$Res>
     extends _$UserApplicationCopyWithImpl<$Res>
-    implements $UserInitialCopyWith<$Res> {
-  _$UserInitialCopyWithImpl(
-      UserInitial _value, $Res Function(UserInitial) _then)
-      : super(_value, (v) => _then(v as UserInitial));
+    implements _$$UserSignedInCopyWith<$Res> {
+  __$$UserSignedInCopyWithImpl(
+      _$UserSignedIn _value, $Res Function(_$UserSignedIn) _then)
+      : super(_value, (v) => _then(v as _$UserSignedIn));
 
   @override
-  UserInitial get _value => super._value as UserInitial;
+  _$UserSignedIn get _value => super._value as _$UserSignedIn;
 }
 
 /// @nodoc
 
-class _$UserInitial implements UserInitial {
-  const _$UserInitial();
+class _$UserSignedIn implements UserSignedIn {
+  const _$UserSignedIn();
 
   @override
   String toString() {
-    return 'UserApplication.initial()';
+    return 'UserApplication.signedIn()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserInitial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserSignedIn);
   }
 
   @override
@@ -600,61 +720,220 @@ class _$UserInitial implements UserInitial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AppUser value) $default, {
-    required TResult Function() loaded,
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
-    required TResult Function() initial,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
   }) {
-    return initial();
+    return signedIn();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AppUser value)? $default, {
-    TResult Function()? loaded,
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
-    TResult Function()? initial,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+  }) {
+    return signedIn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (signedIn != null) {
+      return signedIn();
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(UserData value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
-    required TResult Function(UserInitial value) initial,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
   }) {
-    return initial(this);
+    return signedIn(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(UserData value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
-    TResult Function(UserInitial value)? initial,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) {
+    return signedIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (signedIn != null) {
+      return signedIn(this);
     }
     return orElse();
   }
 }
 
-abstract class UserInitial implements UserApplication {
-  const factory UserInitial() = _$UserInitial;
+abstract class UserSignedIn implements UserApplication {
+  const factory UserSignedIn() = _$UserSignedIn;
+}
+
+/// @nodoc
+abstract class _$$UserSignoutCopyWith<$Res> {
+  factory _$$UserSignoutCopyWith(
+          _$UserSignout value, $Res Function(_$UserSignout) then) =
+      __$$UserSignoutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserSignoutCopyWithImpl<$Res>
+    extends _$UserApplicationCopyWithImpl<$Res>
+    implements _$$UserSignoutCopyWith<$Res> {
+  __$$UserSignoutCopyWithImpl(
+      _$UserSignout _value, $Res Function(_$UserSignout) _then)
+      : super(_value, (v) => _then(v as _$UserSignout));
+
+  @override
+  _$UserSignout get _value => super._value as _$UserSignout;
+}
+
+/// @nodoc
+
+class _$UserSignout implements UserSignout {
+  const _$UserSignout();
+
+  @override
+  String toString() {
+    return 'UserApplication.signout()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserSignout);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() unsignedIn,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
+  }) {
+    return signout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+  }) {
+    return signout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+    required TResult orElse(),
+  }) {
+    if (signout != null) {
+      return signout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
+    required TResult Function(UserLoading value) loading,
+    required TResult Function(UserErrorDetails value) error,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
+  }) {
+    return signout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) {
+    return signout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+    required TResult orElse(),
+  }) {
+    if (signout != null) {
+      return signout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserSignout implements UserApplication {
+  const factory UserSignout() = _$UserSignout;
 }

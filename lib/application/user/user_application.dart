@@ -6,10 +6,11 @@ part 'user_application.freezed.dart';
 
 @freezed
 class UserApplication with _$UserApplication {
-  const factory UserApplication(AppUser value) = UserData;
+  const factory UserApplication.loaded(AppUser value) = UserDataLoaded;
 
-  const factory UserApplication.loaded() = UserDataLoaded;
+  const factory UserApplication.unsignedIn() = UserUnsignedIn;
   const factory UserApplication.loading() = UserLoading;
   const factory UserApplication.error([String? message]) = UserErrorDetails;
-  const factory UserApplication.initial() = UserInitial;
+  const factory UserApplication.signedIn() = UserSignedIn;
+  const factory UserApplication.signout() = UserSignout;
 }

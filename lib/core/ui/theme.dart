@@ -1,14 +1,16 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData myTheme = ThemeData(
-    primarySwatch: Colors.amber,
     brightness: Brightness.light,
     primaryColor: Color(0xffffc107),
+    // ignore: deprecated_member_use
     primaryColorBrightness: Brightness.light,
     primaryColorLight: Color(0xffffecb3),
     primaryColorDark: Color(0xffffa000),
-    accentColor: Color(0xffffc107),
+    // ignore: deprecated_member_use
     accentColorBrightness: Brightness.light,
     canvasColor: Color(0xfffafafa),
     scaffoldBackgroundColor: Color(0xfffafafa),
@@ -465,5 +467,7 @@ class AppTheme {
       selectionColor: Color(0xffffe082),
       selectionHandleColor: Color(0xffffd54f),
     ),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber)
+        .copyWith(secondary: Color(0xffffc107)),
   );
 }
