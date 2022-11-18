@@ -19,6 +19,7 @@ mixin _$UserApplication {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
     required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -29,6 +30,7 @@ mixin _$UserApplication {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -39,6 +41,7 @@ mixin _$UserApplication {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -50,6 +53,8 @@ mixin _$UserApplication {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
     required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
@@ -60,6 +65,8 @@ mixin _$UserApplication {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -70,6 +77,8 @@ mixin _$UserApplication {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -172,6 +181,7 @@ class _$UserDataLoaded implements UserDataLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
     required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -185,6 +195,7 @@ class _$UserDataLoaded implements UserDataLoaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -198,6 +209,7 @@ class _$UserDataLoaded implements UserDataLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -215,6 +227,8 @@ class _$UserDataLoaded implements UserDataLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
     required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
@@ -228,6 +242,8 @@ class _$UserDataLoaded implements UserDataLoaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -241,6 +257,8 @@ class _$UserDataLoaded implements UserDataLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -262,6 +280,150 @@ abstract class UserDataLoaded implements UserApplication {
   @JsonKey(ignore: true)
   _$$UserDataLoadedCopyWith<_$UserDataLoaded> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserSignUpWithUserNameAndPasswordCopyWith<$Res> {
+  factory _$$UserSignUpWithUserNameAndPasswordCopyWith(
+          _$UserSignUpWithUserNameAndPassword value,
+          $Res Function(_$UserSignUpWithUserNameAndPassword) then) =
+      __$$UserSignUpWithUserNameAndPasswordCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserSignUpWithUserNameAndPasswordCopyWithImpl<$Res>
+    extends _$UserApplicationCopyWithImpl<$Res>
+    implements _$$UserSignUpWithUserNameAndPasswordCopyWith<$Res> {
+  __$$UserSignUpWithUserNameAndPasswordCopyWithImpl(
+      _$UserSignUpWithUserNameAndPassword _value,
+      $Res Function(_$UserSignUpWithUserNameAndPassword) _then)
+      : super(_value, (v) => _then(v as _$UserSignUpWithUserNameAndPassword));
+
+  @override
+  _$UserSignUpWithUserNameAndPassword get _value =>
+      super._value as _$UserSignUpWithUserNameAndPassword;
+}
+
+/// @nodoc
+
+class _$UserSignUpWithUserNameAndPassword
+    implements UserSignUpWithUserNameAndPassword {
+  const _$UserSignUpWithUserNameAndPassword();
+
+  @override
+  String toString() {
+    return 'UserApplication.signUpWithUsernameAndPassword()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserSignUpWithUserNameAndPassword);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
+    required TResult Function() unsignedIn,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
+    required TResult Function() signedIn,
+    required TResult Function() signout,
+  }) {
+    return signUpWithUsernameAndPassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+  }) {
+    return signUpWithUsernameAndPassword?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
+    TResult Function()? unsignedIn,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    TResult Function()? signedIn,
+    TResult Function()? signout,
+    required TResult orElse(),
+  }) {
+    if (signUpWithUsernameAndPassword != null) {
+      return signUpWithUsernameAndPassword();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
+    required TResult Function(UserUnsignedIn value) unsignedIn,
+    required TResult Function(UserLoading value) loading,
+    required TResult Function(UserErrorDetails value) error,
+    required TResult Function(UserSignedIn value) signedIn,
+    required TResult Function(UserSignout value) signout,
+  }) {
+    return signUpWithUsernameAndPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+  }) {
+    return signUpWithUsernameAndPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
+    TResult Function(UserUnsignedIn value)? unsignedIn,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserErrorDetails value)? error,
+    TResult Function(UserSignedIn value)? signedIn,
+    TResult Function(UserSignout value)? signout,
+    required TResult orElse(),
+  }) {
+    if (signUpWithUsernameAndPassword != null) {
+      return signUpWithUsernameAndPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserSignUpWithUserNameAndPassword implements UserApplication {
+  const factory UserSignUpWithUserNameAndPassword() =
+      _$UserSignUpWithUserNameAndPassword;
 }
 
 /// @nodoc
@@ -306,6 +468,7 @@ class _$UserUnsignedIn implements UserUnsignedIn {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
     required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -319,6 +482,7 @@ class _$UserUnsignedIn implements UserUnsignedIn {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -332,6 +496,7 @@ class _$UserUnsignedIn implements UserUnsignedIn {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -349,6 +514,8 @@ class _$UserUnsignedIn implements UserUnsignedIn {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
     required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
@@ -362,6 +529,8 @@ class _$UserUnsignedIn implements UserUnsignedIn {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -375,6 +544,8 @@ class _$UserUnsignedIn implements UserUnsignedIn {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -435,6 +606,7 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
     required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -448,6 +620,7 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -461,6 +634,7 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -478,6 +652,8 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
     required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
@@ -491,6 +667,8 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -504,6 +682,8 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -588,6 +768,7 @@ class _$UserErrorDetails implements UserErrorDetails {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
     required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -601,6 +782,7 @@ class _$UserErrorDetails implements UserErrorDetails {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -614,6 +796,7 @@ class _$UserErrorDetails implements UserErrorDetails {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -631,6 +814,8 @@ class _$UserErrorDetails implements UserErrorDetails {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
     required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
@@ -644,6 +829,8 @@ class _$UserErrorDetails implements UserErrorDetails {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -657,6 +844,8 @@ class _$UserErrorDetails implements UserErrorDetails {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -722,6 +911,7 @@ class _$UserSignedIn implements UserSignedIn {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
     required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -735,6 +925,7 @@ class _$UserSignedIn implements UserSignedIn {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -748,6 +939,7 @@ class _$UserSignedIn implements UserSignedIn {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -765,6 +957,8 @@ class _$UserSignedIn implements UserSignedIn {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
     required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
@@ -778,6 +972,8 @@ class _$UserSignedIn implements UserSignedIn {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -791,6 +987,8 @@ class _$UserSignedIn implements UserSignedIn {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -851,6 +1049,7 @@ class _$UserSignout implements UserSignout {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AppUser value) loaded,
+    required TResult Function() signUpWithUsernameAndPassword,
     required TResult Function() unsignedIn,
     required TResult Function() loading,
     required TResult Function(String? message) error,
@@ -864,6 +1063,7 @@ class _$UserSignout implements UserSignout {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -877,6 +1077,7 @@ class _$UserSignout implements UserSignout {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AppUser value)? loaded,
+    TResult Function()? signUpWithUsernameAndPassword,
     TResult Function()? unsignedIn,
     TResult Function()? loading,
     TResult Function(String? message)? error,
@@ -894,6 +1095,8 @@ class _$UserSignout implements UserSignout {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserDataLoaded value) loaded,
+    required TResult Function(UserSignUpWithUserNameAndPassword value)
+        signUpWithUsernameAndPassword,
     required TResult Function(UserUnsignedIn value) unsignedIn,
     required TResult Function(UserLoading value) loading,
     required TResult Function(UserErrorDetails value) error,
@@ -907,6 +1110,8 @@ class _$UserSignout implements UserSignout {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,
@@ -920,6 +1125,8 @@ class _$UserSignout implements UserSignout {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserDataLoaded value)? loaded,
+    TResult Function(UserSignUpWithUserNameAndPassword value)?
+        signUpWithUsernameAndPassword,
     TResult Function(UserUnsignedIn value)? unsignedIn,
     TResult Function(UserLoading value)? loading,
     TResult Function(UserErrorDetails value)? error,

@@ -8,8 +8,8 @@ import 'package:wankolota/repository/lendee/i_lendee_repository.dart';
 import 'package:wankolota/extensions/firebase_firestore_extension.dart';
 
 class LendeeRepository implements ILendeeRepository {
-  final Reader _read;
-  LendeeRepository(this._read);
+  final Ref _ref;
+  LendeeRepository(this._ref);
   @override
   Future<List<Lendee>> getLendee(String userID) async {
     /*   QuerySnapshot query =
@@ -23,7 +23,7 @@ class LendeeRepository implements ILendeeRepository {
       return Lendee.fromJson(data);
     }).toList();*/
     final query =
-        await _read(firebaseFireStoreProvider).userListRef(userID).get();
+        await _ref.read(firebaseFireStoreProvider).userListRef(userID).get();
     return query.docs.map((e) {
       final l = Lendee.fromDocument(e);
       return l;
@@ -32,7 +32,8 @@ class LendeeRepository implements ILendeeRepository {
 
   @override
   Future addLendee(String userId, Lendee data) async {
-    await _read(firebaseFireStoreProvider)
+    await _ref
+        .read(firebaseFireStoreProvider)
         .userListRef(userId)
         .add(data.toDocument());
     //_lendeeFirebase.doc().set(data.toJson());
@@ -40,7 +41,8 @@ class LendeeRepository implements ILendeeRepository {
 
   @override
   Future deleteLendee(String userId, Lendee data) async {
-    await _read(firebaseFireStoreProvider)
+    await _ref
+        .read(firebaseFireStoreProvider)
         .userListRef(userId)
         .doc(data.id)
         .delete();
@@ -51,7 +53,8 @@ class LendeeRepository implements ILendeeRepository {
   Future updateLendee(String userId, Lendee data) async {
     final history =
         LendeeHistory(amount: data.amount, transactionDate: DateTime.now());
-    await _read(firebaseFireStoreProvider)
+    await _ref
+        .read(firebaseFireStoreProvider)
         .userListRef(userId)
         .doc(data.id)
         .update(data.toDocument());
@@ -62,7 +65,8 @@ class LendeeRepository implements ILendeeRepository {
   @override
   Future<List<LendeeHistory>> getHistory(
       String userId, String documentId) async {
-    final query = await _read(firebaseFireStoreProvider)
+    final query = await _ref
+        .read(firebaseFireStoreProvider)
         .historyListRef(userId, documentId)
         .get();
     return query.docs.map((e) => LendeeHistory.fromDocument(e)).toList();
@@ -71,7 +75,8 @@ class LendeeRepository implements ILendeeRepository {
   @override
   Future updateLendeeHistory(
       String userId, String documentID, LendeeHistory data) async {
-    await _read(firebaseFireStoreProvider)
+    await _ref
+        .read(firebaseFireStoreProvider)
         .historyListRef(
           userId,
           documentID,

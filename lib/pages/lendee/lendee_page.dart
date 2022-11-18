@@ -32,8 +32,6 @@ class LendeePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(lendeeNotifierProvider);
 
-    double fullamount = 0;
-
     bool _loading = false;
     ref.listen<LendeeApplication>(lendeeNotifierProvider,
         (LendeeApplication? prev, LendeeApplication next) {
@@ -104,26 +102,10 @@ class LendeePage extends ConsumerWidget {
             loading: () => LoadingOverlay(
                 isLoading: true,
                 child: Center(child: CircularProgressIndicator())),
-            orElse: (() => Text("Error occured2")),
+            orElse: (() => Text("Error occured")),
           ),
         ),
       ),
-
-      /*  Column(
-        children: [
-          
-    
-              if (state is LendeeInitial) {
-                return Text("intial");
-              } else if (state is LendinginitialData) {
-                return LendeeList(data: state.lendeeData);
-              } else if (state is LendeeLoading) {
-                return CircularProgressIndicator();
-              } else {
-                return Text("No Data");
-              }
-            }),*/
-
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await Alert(

@@ -2,13 +2,16 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wankolota/application/user/user_application.dart';
+import 'package:wankolota/core/helper/exceptions.dart';
+import 'package:wankolota/model/sign_in/sign_in.dart';
+import 'package:wankolota/model/sign_up/sign_up.dart';
 
 import 'package:wankolota/providers/user_provider.dart';
 
 class UserNotifier extends StateNotifier<UserApplication> {
-  final Reader _read;
+  final Ref _ref;
 
-  UserNotifier(this._read)
+  UserNotifier(this._ref)
       : super(
           UserApplication.loading(),
         ) {
@@ -18,13 +21,13 @@ class UserNotifier extends StateNotifier<UserApplication> {
   Future<void> getUser() async {
     try {
       state = UserLoading();
-      final _user = await _read(userRepositoryProvider).getUser();
+      final _user = await _ref.read(userRepositoryProvider).getUser();
       if (_user == null) {
         state = UserUnsignedIn();
       } else {
         state = UserDataLoaded(_user);
       }
-    } on Exception catch (_) {
+    } on AppException catch (_) {
       state = UserErrorDetails(_.toString());
     }
   }
@@ -32,12 +35,44 @@ class UserNotifier extends StateNotifier<UserApplication> {
   Future<void> signInWithGoogle() async {
     try {
       state = UserLoading();
-      await _read(userRepositoryProvider).saveGoogleUserInfomration();
-      final _user = await _read(userRepositoryProvider).getUser();
+      await _ref.read(userRepositoryProvider).saveGoogleUserInfomration();
+      final _user = await _ref.read(userRepositoryProvider).getUser();
 
       state = UserDataLoaded(_user!);
-    } on Exception catch (_) {
+    } on AppException catch (_) {
       state = UserErrorDetails(_.toString());
+    }
+  }
+
+  Future<void> signUpWithUsernameAndPassword(
+      SignUpRequest signUpRequest) async {
+    try {
+      state = UserLoading();
+      Future.delayed(Duration(minutes: 1));
+      await _ref
+          .read(userRepositoryProvider)
+          .signUpWithUsernameAndPassword(signUpRequest);
+      final _user = await _ref.read(userRepositoryProvider).getUser();
+      state = UserSignUpWithUserNameAndPassword();
+      state = UserDataLoaded(_user!);
+    } on AppException catch (e) {
+      state = UserErrorDetails(e.message);
+    }
+  }
+
+  Future<void> signInWithUsernameAndPassword(SignInRequest sign) async {
+    try {
+      state = UserLoading();
+
+      await _ref
+          .read(userRepositoryProvider)
+          .signInWithUsernameAndPassword(sign);
+
+      final _user = await _ref.read(userRepositoryProvider).getUser();
+
+      state = UserDataLoaded(_user!);
+    } on AppException catch (e) {
+      state = UserErrorDetails(e.message);
     }
   }
 
@@ -56,10 +91,10 @@ class UserNotifier extends StateNotifier<UserApplication> {
   Future<void> signOut() async {
     try {
       state = UserLoading();
-      await _read(userRepositoryProvider).signOutGoogle();
+      await _ref.read(userRepositoryProvider).signOutGoogle();
 
       state = UserSignout();
-    } on Exception catch (_) {
+    } on AppException catch (_) {
       state = UserErrorDetails(_.toString());
     }
   }

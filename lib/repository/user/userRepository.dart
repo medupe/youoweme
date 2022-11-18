@@ -1,19 +1,25 @@
+import 'dart:convert';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:http/http.dart' as http;
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:wankolota/core/helper/exceptions.dart';
+import 'package:wankolota/extensions/firebase_firestore_extension.dart';
+import 'package:wankolota/model/sign_in/sign_in.dart';
+import 'package:wankolota/model/sign_up/sign_up.dart';
 import 'package:wankolota/model/users/app_user.dart';
 import 'package:wankolota/repository/general_provider.dart';
 import 'package:wankolota/repository/user/i_user_repository.dart';
 
 class UserRepository implements IUserRepository {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-  final Reader _read;
-  UserRepository(this._read);
+  final Ref _ref;
+  UserRepository(this._ref);
 
   @override
   AppUser? getUser() {
-    final _firebaseUser = _read(firebaseAuthProvider).currentUser;
+    final _firebaseUser = _ref.read(firebaseAuthProvider).currentUser;
     if (_firebaseUser == null) return null;
     final _appUser =
         AppUser(userID: _firebaseUser.uid, userName: _firebaseUser.displayName);
@@ -31,15 +37,15 @@ class UserRepository implements IUserRepository {
       accessToken: googleSignInAuthentication.accessToken,
       idToken: googleSignInAuthentication.idToken,
     );
-    await _read(firebaseAuthProvider).signInWithCredential(credential);
+    await _ref.read(firebaseAuthProvider).signInWithCredential(credential);
     // await _auth.signInWithCredential(credential);
   }
 
   @override
   Future signOutGoogle() async {
-    await _googleSignIn.signOut();
+    // await _googleSignIn.signOut();
     // await _auth.signOut();
-    await _read(firebaseAuthProvider).signOut();
+    await _ref.read(firebaseAuthProvider).signOut();
     // await _read(googleAuthProvider).signOut();
   }
 
@@ -64,5 +70,39 @@ class UserRepository implements IUserRepository {
 
   @override
   Stream<User?> get authStateChanges =>
-      _read(firebaseAuthProvider).authStateChanges();
+      _ref.read(firebaseAuthProvider).authStateChanges();
+
+  @override
+  Future signUpWithUsernameAndPassword(SignUpRequest signup) async {
+    try {
+      UserCredential userCredential = await _ref
+          .read(firebaseAuthProvider)
+          .createUserWithEmailAndPassword(
+              email: signup.email, password: signup.password);
+
+      await userCredential.user!.updateDisplayName(signup.displayName);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        throw WeakPasswordException();
+      } else if (e.code == 'email-already-in-use') {
+        throw EmailExistException();
+      } else {
+        throw UserRegistrationException(message: e.message);
+      }
+    } catch (e) {
+      throw UserRegistrationException(message: "Error occured");
+    }
+  }
+
+  @override
+  Future signInWithUsernameAndPassword(SignInRequest signInRequest) async {
+    try {
+      await _ref.read(firebaseAuthProvider).signInWithEmailAndPassword(
+          email: signInRequest.email, password: signInRequest.password);
+    } on FirebaseAuthException catch (e) {
+      throw UserRegistrationException(message: e.message);
+    } catch (e) {
+      throw UserRegistrationException(message: "Error occured");
+    }
+  }
 }

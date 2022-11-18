@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wankolota/application/lendee/lendee_application.dart';
-import 'package:wankolota/core/classes/percentage_calculator.dart';
+
 import 'package:wankolota/core/helper/exceptions.dart';
 import 'package:wankolota/notifier/lendee_notifier.dart';
 
@@ -8,7 +8,7 @@ import 'package:wankolota/providers/user_provider.dart';
 import 'package:wankolota/repository/lendee/lendee_repository.dart';
 
 final lendeeRepositoryProvider = Provider.autoDispose<LendeeRepository>(
-  (ref) => LendeeRepository(ref.read),
+  (ref) => LendeeRepository(ref),
 );
 
 final lendeeNotifierProvider =

@@ -51,10 +51,9 @@ class LendeeNotifier extends StateNotifier<LendeeApplication> {
   Future<void> addLendee(Lendee data) async {
     try {
       state = LendeeLoading();
-      await Future.delayed(Duration(minutes: 1));
-      //  final user = await userRepository.getUser();
+
       final lendeeData = data.copyWith(userId: _userId!.userID ?? "");
-      //    await lendeeRepository.addLendee(lendeeData);
+
       await _ref
           .read(lendeeRepositoryProvider)
           .addLendee(_userId!.userID ?? "", lendeeData);
