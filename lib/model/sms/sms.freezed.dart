@@ -22,7 +22,7 @@ Sms _$SmsFromJson(Map<String, dynamic> json) {
 mixin _$Sms {
   String? get sender => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-  List<String> get recipients => throw _privateConstructorUsedError;
+  String get destination => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ mixin _$Sms {
 abstract class $SmsCopyWith<$Res> {
   factory $SmsCopyWith(Sms value, $Res Function(Sms) then) =
       _$SmsCopyWithImpl<$Res>;
-  $Res call({String? sender, String message, List<String> recipients});
+  $Res call({String? sender, String message, String destination});
 }
 
 /// @nodoc
@@ -48,7 +48,7 @@ class _$SmsCopyWithImpl<$Res> implements $SmsCopyWith<$Res> {
   $Res call({
     Object? sender = freezed,
     Object? message = freezed,
-    Object? recipients = freezed,
+    Object? destination = freezed,
   }) {
     return _then(_value.copyWith(
       sender: sender == freezed
@@ -59,10 +59,10 @@ class _$SmsCopyWithImpl<$Res> implements $SmsCopyWith<$Res> {
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      recipients: recipients == freezed
-          ? _value.recipients
-          : recipients // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      destination: destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$_SmsCopyWith<$Res> implements $SmsCopyWith<$Res> {
   factory _$$_SmsCopyWith(_$_Sms value, $Res Function(_$_Sms) then) =
       __$$_SmsCopyWithImpl<$Res>;
   @override
-  $Res call({String? sender, String message, List<String> recipients});
+  $Res call({String? sender, String message, String destination});
 }
 
 /// @nodoc
@@ -88,7 +88,7 @@ class __$$_SmsCopyWithImpl<$Res> extends _$SmsCopyWithImpl<$Res>
   $Res call({
     Object? sender = freezed,
     Object? message = freezed,
-    Object? recipients = freezed,
+    Object? destination = freezed,
   }) {
     return _then(_$_Sms(
       sender: sender == freezed
@@ -99,10 +99,10 @@ class __$$_SmsCopyWithImpl<$Res> extends _$SmsCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      recipients: recipients == freezed
-          ? _value._recipients
-          : recipients // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      destination: destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -113,8 +113,7 @@ class _$_Sms implements _Sms {
   _$_Sms(
       {this.sender = 'Wankolota',
       required this.message,
-      required final List<String> recipients})
-      : _recipients = recipients;
+      required this.destination});
 
   factory _$_Sms.fromJson(Map<String, dynamic> json) => _$$_SmsFromJson(json);
 
@@ -123,16 +122,12 @@ class _$_Sms implements _Sms {
   final String? sender;
   @override
   final String message;
-  final List<String> _recipients;
   @override
-  List<String> get recipients {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_recipients);
-  }
+  final String destination;
 
   @override
   String toString() {
-    return 'Sms(sender: $sender, message: $message, recipients: $recipients)';
+    return 'Sms(sender: $sender, message: $message, destination: $destination)';
   }
 
   @override
@@ -143,7 +138,7 @@ class _$_Sms implements _Sms {
             const DeepCollectionEquality().equals(other.sender, sender) &&
             const DeepCollectionEquality().equals(other.message, message) &&
             const DeepCollectionEquality()
-                .equals(other._recipients, _recipients));
+                .equals(other.destination, destination));
   }
 
   @JsonKey(ignore: true)
@@ -152,7 +147,7 @@ class _$_Sms implements _Sms {
       runtimeType,
       const DeepCollectionEquality().hash(sender),
       const DeepCollectionEquality().hash(message),
-      const DeepCollectionEquality().hash(_recipients));
+      const DeepCollectionEquality().hash(destination));
 
   @JsonKey(ignore: true)
   @override
@@ -169,7 +164,7 @@ abstract class _Sms implements Sms {
   factory _Sms(
       {final String? sender,
       required final String message,
-      required final List<String> recipients}) = _$_Sms;
+      required final String destination}) = _$_Sms;
 
   factory _Sms.fromJson(Map<String, dynamic> json) = _$_Sms.fromJson;
 
@@ -178,8 +173,140 @@ abstract class _Sms implements Sms {
   @override
   String get message;
   @override
-  List<String> get recipients;
+  String get destination;
   @override
   @JsonKey(ignore: true)
   _$$_SmsCopyWith<_$_Sms> get copyWith => throw _privateConstructorUsedError;
+}
+
+Authentication _$AuthenticationFromJson(Map<String, dynamic> json) {
+  return _Authentication.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Authentication {
+  String? get token => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AuthenticationCopyWith<Authentication> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AuthenticationCopyWith<$Res> {
+  factory $AuthenticationCopyWith(
+          Authentication value, $Res Function(Authentication) then) =
+      _$AuthenticationCopyWithImpl<$Res>;
+  $Res call({String? token});
+}
+
+/// @nodoc
+class _$AuthenticationCopyWithImpl<$Res>
+    implements $AuthenticationCopyWith<$Res> {
+  _$AuthenticationCopyWithImpl(this._value, this._then);
+
+  final Authentication _value;
+  // ignore: unused_field
+  final $Res Function(Authentication) _then;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+  }) {
+    return _then(_value.copyWith(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_AuthenticationCopyWith<$Res>
+    implements $AuthenticationCopyWith<$Res> {
+  factory _$$_AuthenticationCopyWith(
+          _$_Authentication value, $Res Function(_$_Authentication) then) =
+      __$$_AuthenticationCopyWithImpl<$Res>;
+  @override
+  $Res call({String? token});
+}
+
+/// @nodoc
+class __$$_AuthenticationCopyWithImpl<$Res>
+    extends _$AuthenticationCopyWithImpl<$Res>
+    implements _$$_AuthenticationCopyWith<$Res> {
+  __$$_AuthenticationCopyWithImpl(
+      _$_Authentication _value, $Res Function(_$_Authentication) _then)
+      : super(_value, (v) => _then(v as _$_Authentication));
+
+  @override
+  _$_Authentication get _value => super._value as _$_Authentication;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+  }) {
+    return _then(_$_Authentication(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Authentication implements _Authentication {
+  _$_Authentication({this.token});
+
+  factory _$_Authentication.fromJson(Map<String, dynamic> json) =>
+      _$$_AuthenticationFromJson(json);
+
+  @override
+  final String? token;
+
+  @override
+  String toString() {
+    return 'Authentication(token: $token)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Authentication &&
+            const DeepCollectionEquality().equals(other.token, token));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(token));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AuthenticationCopyWith<_$_Authentication> get copyWith =>
+      __$$_AuthenticationCopyWithImpl<_$_Authentication>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AuthenticationToJson(this);
+  }
+}
+
+abstract class _Authentication implements Authentication {
+  factory _Authentication({final String? token}) = _$_Authentication;
+
+  factory _Authentication.fromJson(Map<String, dynamic> json) =
+      _$_Authentication.fromJson;
+
+  @override
+  String? get token;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AuthenticationCopyWith<_$_Authentication> get copyWith =>
+      throw _privateConstructorUsedError;
 }

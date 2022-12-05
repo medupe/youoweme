@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wankolota/application/user/user_application.dart';
-import 'package:wankolota/core/helper/helpers.dart';
-import 'package:wankolota/core/ui/snackbar.dart';
-import 'package:wankolota/model/sign_up/sign_up.dart';
-import 'package:wankolota/pages/lendee/lendee_page.dart';
-import 'package:wankolota/providers/user_provider.dart';
+import 'package:uome/application/user/user_application.dart';
+import 'package:uome/core/helper/helpers.dart';
+import 'package:uome/core/ui/snackbar.dart';
+import 'package:uome/model/sign_up/sign_up.dart';
+import 'package:uome/pages/lendee/lendee_page.dart';
+import 'package:uome/providers/user_provider.dart';
 
 class SignUpFormWidget extends ConsumerStatefulWidget {
   const SignUpFormWidget({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class _SignUpFormState extends ConsumerState<SignUpFormWidget> {
         );
       } else if (next is UserUnsignedIn) {
       } else if (next is UserSignUpWithUserNameAndPassword) {
-        AppSnackBar.showSnackBar("Successfully registered", context);
+        AppSnackBar.showSnackBar("Successfully registered user", context);
       } else {}
     });
     return Form(

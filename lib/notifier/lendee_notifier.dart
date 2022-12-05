@@ -1,14 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wankolota/application/lendee/lendee_application.dart';
-
-import 'package:wankolota/core/helper/exceptions.dart';
-import 'package:wankolota/model/bulksms/bulk_sms.dart';
-
-import 'package:wankolota/model/lendee/lendee.dart';
-import 'package:wankolota/model/lendee_history/lendee_history.dart';
-import 'package:wankolota/model/users/app_user.dart';
-import 'package:wankolota/providers/lendee_provider.dart';
-import 'package:wankolota/providers/sms_provider.dart';
+import 'package:uome/application/lendee/lendee_application.dart';
+import 'package:uome/core/helper/exceptions.dart';
+import 'package:uome/model/bulksms/bulk_sms.dart';
+import 'package:uome/model/lendee/lendee.dart';
+import 'package:uome/model/lendee_history/lendee_history.dart';
+import 'package:uome/model/users/app_user.dart';
+import 'package:uome/providers/lendee_provider.dart';
+import 'package:uome/providers/sms_provider.dart';
 
 class LendeeNotifier extends StateNotifier<LendeeApplication> {
   final Ref _ref;
@@ -65,15 +63,15 @@ class LendeeNotifier extends StateNotifier<LendeeApplication> {
 
       // state = LendeeLoading();
       final sms = BulkSms(
-          body: "Hi, " +
+          content: "Hi, " +
               data.fullname +
-              " " +
+              ", " +
               _userId!.userName! +
               " lended you R" +
               data.amount.toStringAsFixed(2) +
-              " to be payed back in " +
+              " to be payed back on " +
               data.duedate.toString(),
-          to: data.cellNumber);
+          destination: data.cellNumber);
 
       await _ref.read(smsNotifierProvider.notifier).sendSMS(sms);
 
@@ -111,14 +109,14 @@ class LendeeNotifier extends StateNotifier<LendeeApplication> {
             .getLendee(_userId!.userID ?? "");
 
         final smsUpdate = BulkSms(
-            body: currentData.fullname +
+            content: currentData.fullname +
                 " you have paid R " +
                 amountToUpdate.toStringAsFixed(2) +
                 " to " +
                 _userId!.userName! +
                 " and still owe R " +
                 amountLeft.toStringAsFixed(2),
-            to: currentData.cellNumber);
+            destination: currentData.cellNumber);
         state = LendeeUpdated();
         state = LendeeDataLoaded(list);
 
@@ -153,7 +151,7 @@ class LendeeNotifier extends StateNotifier<LendeeApplication> {
           .getLendee(_userId!.userID ?? "");
 
       final smsUpdate = BulkSms(
-          body: !isDebtCalncelled
+          content: !isDebtCalncelled
               ? data.fullname +
                   " you have paid R" +
                   data.amount.toStringAsFixed(2) +
@@ -164,7 +162,7 @@ class LendeeNotifier extends StateNotifier<LendeeApplication> {
                   " of R " +
                   data.amount.toStringAsFixed(2) +
                   " is cancelled",
-          to: data.cellNumber);
+          destination: data.cellNumber);
       state = LendeeDeleted();
       state = LendeeDataLoaded(list);
 

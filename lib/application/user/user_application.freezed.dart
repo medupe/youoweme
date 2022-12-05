@@ -112,8 +112,6 @@ abstract class _$$UserDataLoadedCopyWith<$Res> {
           _$UserDataLoaded value, $Res Function(_$UserDataLoaded) then) =
       __$$UserDataLoadedCopyWithImpl<$Res>;
   $Res call({AppUser value});
-
-  $AppUserCopyWith<$Res> get value;
 }
 
 /// @nodoc
@@ -137,13 +135,6 @@ class __$$UserDataLoadedCopyWithImpl<$Res>
           : value // ignore: cast_nullable_to_non_nullable
               as AppUser,
     ));
-  }
-
-  @override
-  $AppUserCopyWith<$Res> get value {
-    return $AppUserCopyWith<$Res>(_value.value, (value) {
-      return _then(_value.copyWith(value: value));
-    });
   }
 }
 

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wankolota/application/user/user_application.dart';
-import 'package:wankolota/core/helper/helpers.dart';
-import 'package:wankolota/core/ui/snackbar.dart';
-import 'package:wankolota/model/sign_in/sign_in.dart';
-import 'package:wankolota/pages/lendee/lendee_page.dart';
-import 'package:wankolota/pages/user/signup_page.dart';
-import 'package:wankolota/providers/user_provider.dart';
+import 'package:uome/application/user/user_application.dart';
+import 'package:uome/core/helper/helpers.dart';
+import 'package:uome/core/ui/snackbar.dart';
+import 'package:uome/model/sign_in/sign_in.dart';
+import 'package:uome/pages/lendee/lendee_page.dart';
+import 'package:uome/pages/user/signup_page.dart';
+import 'package:uome/providers/user_provider.dart';
 
 class LoginFormWidget extends ConsumerStatefulWidget {
   const LoginFormWidget({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _MyLoginFormWidget extends ConsumerState<LoginFormWidget> {
     ref.listen<UserApplication>(userNotifierProvider,
         (UserApplication? prev, UserApplication next) {
       if (next is UserErrorDetails) {
-        AppSnackBar.showSnackBar(next.message ?? "", context);
+        AppSnackBar.showSnackBar(next.message ?? " ", context);
       } else if (next is UserDataLoaded) {
         AppSnackBar.showSnackBar(
             "Signed in as: " + next.value.userName!, context);

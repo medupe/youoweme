@@ -9,13 +9,21 @@ part of 'sms.dart';
 _$_Sms _$$_SmsFromJson(Map<String, dynamic> json) => _$_Sms(
       sender: json['sender'] as String? ?? 'Wankolota',
       message: json['message'] as String,
-      recipients: (json['recipients'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+      destination: json['destination'] as String,
     );
 
 Map<String, dynamic> _$$_SmsToJson(_$_Sms instance) => <String, dynamic>{
       'sender': instance.sender,
       'message': instance.message,
-      'recipients': instance.recipients,
+      'destination': instance.destination,
+    };
+
+_$_Authentication _$$_AuthenticationFromJson(Map<String, dynamic> json) =>
+    _$_Authentication(
+      token: json['token'] as String?,
+    );
+
+Map<String, dynamic> _$$_AuthenticationToJson(_$_Authentication instance) =>
+    <String, dynamic>{
+      'token': instance.token,
     };

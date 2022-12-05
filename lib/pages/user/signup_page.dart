@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loading_overlay/loading_overlay.dart';
-import 'package:wankolota/application/user/user_application.dart';
-import 'package:wankolota/pages/user/widgets/signup_form.dart';
-import 'package:wankolota/providers/user_provider.dart';
+import 'package:uome/application/user/user_application.dart';
+import 'package:uome/pages/user/widgets/signup_form.dart';
+import 'package:uome/providers/user_provider.dart';
 
 class SignUpPage extends ConsumerWidget {
   const SignUpPage({Key? key}) : super(key: key);

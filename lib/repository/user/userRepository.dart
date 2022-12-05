@@ -4,13 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:wankolota/core/helper/exceptions.dart';
-import 'package:wankolota/extensions/firebase_firestore_extension.dart';
-import 'package:wankolota/model/sign_in/sign_in.dart';
-import 'package:wankolota/model/sign_up/sign_up.dart';
-import 'package:wankolota/model/users/app_user.dart';
-import 'package:wankolota/repository/general_provider.dart';
-import 'package:wankolota/repository/user/i_user_repository.dart';
+import 'package:uome/core/helper/exceptions.dart';
+import 'package:uome/model/sign_in/sign_in.dart';
+import 'package:uome/model/sign_up/sign_up.dart';
+import 'package:uome/model/users/app_user.dart';
+import 'package:uome/repository/general_provider.dart';
+import 'package:uome/repository/user/i_user_repository.dart';
 
 class UserRepository implements IUserRepository {
   final GoogleSignIn _googleSignIn = GoogleSignIn();

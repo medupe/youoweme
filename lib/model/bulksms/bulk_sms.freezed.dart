@@ -20,8 +20,8 @@ BulkSms _$BulkSmsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BulkSms {
-  String get to => throw _privateConstructorUsedError;
-  String get body => throw _privateConstructorUsedError;
+  String get destination => throw _privateConstructorUsedError;
+  String get content => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +32,7 @@ mixin _$BulkSms {
 abstract class $BulkSmsCopyWith<$Res> {
   factory $BulkSmsCopyWith(BulkSms value, $Res Function(BulkSms) then) =
       _$BulkSmsCopyWithImpl<$Res>;
-  $Res call({String to, String body});
+  $Res call({String destination, String content});
 }
 
 /// @nodoc
@@ -45,17 +45,17 @@ class _$BulkSmsCopyWithImpl<$Res> implements $BulkSmsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? to = freezed,
-    Object? body = freezed,
+    Object? destination = freezed,
+    Object? content = freezed,
   }) {
     return _then(_value.copyWith(
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
+      destination: destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
               as String,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -67,7 +67,7 @@ abstract class _$$_BulkSmsCopyWith<$Res> implements $BulkSmsCopyWith<$Res> {
           _$_BulkSms value, $Res Function(_$_BulkSms) then) =
       __$$_BulkSmsCopyWithImpl<$Res>;
   @override
-  $Res call({String to, String body});
+  $Res call({String destination, String content});
 }
 
 /// @nodoc
@@ -81,17 +81,17 @@ class __$$_BulkSmsCopyWithImpl<$Res> extends _$BulkSmsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? to = freezed,
-    Object? body = freezed,
+    Object? destination = freezed,
+    Object? content = freezed,
   }) {
     return _then(_$_BulkSms(
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
+      destination: destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
               as String,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -100,19 +100,19 @@ class __$$_BulkSmsCopyWithImpl<$Res> extends _$BulkSmsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BulkSms implements _BulkSms {
-  const _$_BulkSms({required this.to, required this.body});
+  const _$_BulkSms({required this.destination, required this.content});
 
   factory _$_BulkSms.fromJson(Map<String, dynamic> json) =>
       _$$_BulkSmsFromJson(json);
 
   @override
-  final String to;
+  final String destination;
   @override
-  final String body;
+  final String content;
 
   @override
   String toString() {
-    return 'BulkSms(to: $to, body: $body)';
+    return 'BulkSms(destination: $destination, content: $content)';
   }
 
   @override
@@ -120,16 +120,17 @@ class _$_BulkSms implements _BulkSms {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BulkSms &&
-            const DeepCollectionEquality().equals(other.to, to) &&
-            const DeepCollectionEquality().equals(other.body, body));
+            const DeepCollectionEquality()
+                .equals(other.destination, destination) &&
+            const DeepCollectionEquality().equals(other.content, content));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(to),
-      const DeepCollectionEquality().hash(body));
+      const DeepCollectionEquality().hash(destination),
+      const DeepCollectionEquality().hash(content));
 
   @JsonKey(ignore: true)
   @override
@@ -144,14 +145,15 @@ class _$_BulkSms implements _BulkSms {
 
 abstract class _BulkSms implements BulkSms {
   const factory _BulkSms(
-      {required final String to, required final String body}) = _$_BulkSms;
+      {required final String destination,
+      required final String content}) = _$_BulkSms;
 
   factory _BulkSms.fromJson(Map<String, dynamic> json) = _$_BulkSms.fromJson;
 
   @override
-  String get to;
+  String get destination;
   @override
-  String get body;
+  String get content;
   @override
   @JsonKey(ignore: true)
   _$$_BulkSmsCopyWith<_$_BulkSms> get copyWith =>

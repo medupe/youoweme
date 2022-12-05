@@ -1,6 +1,6 @@
 // main.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wankolota/model/users/app_user.dart';
+import 'package:uome/model/users/app_user.dart';
 part 'user_application.freezed.dart';
 
 @freezed

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:intl/intl.dart';
-import 'package:wankolota/model/lendee_history/lendee_history.dart';
+import 'package:uome/model/lendee_history/lendee_history.dart';
 
 class LendeeListHistoryWidget extends ConsumerWidget {
   final List<LendeeHistory> data;
