@@ -3,11 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:wankolota/core/helper/helpers.dart';
-
-import 'package:wankolota/model/lendee/lendee.dart';
-import 'package:wankolota/pages/lendee/lendee_history_page.dart';
-import 'package:wankolota/providers/lendee_provider.dart';
+import 'package:uome/core/helper/helpers.dart';
+import 'package:uome/model/lendee/lendee.dart';
+import 'package:uome/pages/lendee/lendee_history_page.dart';
+import 'package:uome/providers/lendee_provider.dart';
 
 class LendeeListWidget extends ConsumerWidget {
   final List<Lendee> data;
@@ -97,31 +96,48 @@ class LendeeListWidget extends ConsumerWidget {
                       ),
                     ],
                   ),
-                  trailing: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        " R " + data[index].amount.toStringAsFixed(2),
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        width: 75,
-                        height: 20,
-                        color: data[index].duedate.isBefore(DateTime.now())
-                            ? Colors.red
-                            : Colors.green, //    < ,
-                        child: Text(
-                          data[index].duedate.isBefore(DateTime.now())
-                              ? "Overdue"
-                              : "Good",
-                          style: TextStyle(fontSize: 15),
+                  trailing: Container(
+                    width: 150,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              " R " + data[index].amount.toStringAsFixed(2),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              width: 75,
+                              height: 20,
+                              color:
+                                  data[index].duedate.isBefore(DateTime.now())
+                                      ? Colors.red
+                                      : Colors.green, //    < ,
+                              child: Text(
+                                data[index].duedate.isBefore(DateTime.now())
+                                    ? "Overdue"
+                                    : "Good",
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 20),
+                        Container(
+                          height: double.infinity,
+                          margin: EdgeInsets.only(right: 0),
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -178,6 +194,7 @@ class LendeeListWidget extends ConsumerWidget {
         ),
         buttons: [
           DialogButton(
+            color: Theme.of(context).colorScheme.primary,
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 final enteredAmount = double.parse(_amountController.text);
@@ -204,6 +221,7 @@ class LendeeListWidget extends ConsumerWidget {
       desc: "Are you sure you want to delete?",
       buttons: [
         DialogButton(
+          color: Theme.of(context).colorScheme.primary,
           child: Text(
             "CANCEL",
             style: TextStyle(color: Colors.white, fontSize: 20),

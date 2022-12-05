@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wankolota/model/sign_in/sign_in.dart';
-import 'package:wankolota/model/sign_up/sign_up.dart';
-import 'package:wankolota/model/users/app_user.dart';
+import 'package:uome/model/sign_in/sign_in.dart';
+import 'package:uome/model/sign_up/sign_up.dart';
+import 'package:uome/model/users/app_user.dart';
 
 abstract class IUserRepository {
   AppUser? getUser();

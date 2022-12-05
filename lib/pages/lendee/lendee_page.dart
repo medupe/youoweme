@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_progress_hud/flutter_progress_hud.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/route_manager.dart';
+
 import 'package:intl/intl.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:wankolota/application/lendee/lendee_application.dart';
-import 'package:wankolota/application/sms/sms_application.dart';
-import 'package:wankolota/application/user/user_application.dart';
-import 'package:wankolota/core/classes/percentage_calculator.dart';
-import 'package:wankolota/core/helper/helpers.dart';
-import 'package:wankolota/core/ui/snackbar.dart';
-
-import 'package:wankolota/model/lendee/lendee.dart';
-import 'package:wankolota/pages/lendee/widgets/lendee_list.dart';
-import 'package:wankolota/providers/lendee_provider.dart';
-import 'package:wankolota/providers/sms_provider.dart';
-import 'package:wankolota/providers/user_provider.dart';
+import 'package:uome/application/lendee/lendee_application.dart';
+import 'package:uome/application/sms/sms_application.dart';
+import 'package:uome/application/user/user_application.dart';
+import 'package:uome/core/helper/helpers.dart';
+import 'package:uome/core/ui/snackbar.dart';
+import 'package:uome/model/lendee/lendee.dart';
+import 'package:uome/pages/lendee/widgets/lendee_list.dart';
+import 'package:uome/providers/lendee_provider.dart';
+import 'package:uome/providers/sms_provider.dart';
+import 'package:uome/providers/user_provider.dart';
 
 class LendeePage extends ConsumerWidget {
   LendeePage({Key? key}) : super(key: key);
@@ -148,7 +146,7 @@ class LendeePage extends ConsumerWidget {
                           return null;
                         },
                         decoration: InputDecoration(
-                          icon: Icon(Icons.account_circle),
+                          icon: Icon(Icons.phone),
                           labelText: 'Cell number',
                         ),
                       ),
@@ -172,7 +170,7 @@ class LendeePage extends ConsumerWidget {
                           return null;
                         },
                         decoration: InputDecoration(
-                          icon: Icon(Icons.account_circle),
+                          icon: Icon(Icons.money),
                           labelText: 'Amount',
                         ),
                       ),
@@ -197,7 +195,7 @@ class LendeePage extends ConsumerWidget {
                           return null;
                         },
                         decoration: InputDecoration(
-                          icon: Icon(Icons.account_circle),
+                          icon: Icon(Icons.percent),
                           labelText: 'Interest rate',
                         ),
                       ),
@@ -228,7 +226,7 @@ class LendeePage extends ConsumerWidget {
                               DateFormat('yyyy-MM-dd').format(date);
                         },
                         decoration: InputDecoration(
-                          icon: Icon(Icons.lock),
+                          icon: Icon(Icons.calendar_month),
                           labelText: 'Expected pay date',
                         ),
                       ),
@@ -245,6 +243,7 @@ class LendeePage extends ConsumerWidget {
               ),
               buttons: [
                 DialogButton(
+                  color: Theme.of(context).colorScheme.primary,
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       final lendee = Lendee(

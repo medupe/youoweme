@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'package:wankolota/application/user/user_application.dart';
-import 'package:wankolota/core/helper/helpers.dart';
-import 'package:wankolota/core/ui/snackbar.dart';
-import 'package:wankolota/model/sign_in/sign_in.dart';
-import 'package:wankolota/model/sign_up/sign_up.dart';
-import 'package:wankolota/pages/lendee/lendee_page.dart';
-import 'package:wankolota/pages/user/widgets/signin_content_widget.dart';
-import 'package:wankolota/providers/user_provider.dart';
+import 'package:uome/application/user/user_application.dart';
+import 'package:uome/core/helper/helpers.dart';
+import 'package:uome/core/ui/snackbar.dart';
+import 'package:uome/model/sign_in/sign_in.dart';
+import 'package:uome/model/sign_up/sign_up.dart';
+import 'package:uome/pages/lendee/lendee_page.dart';
+import 'package:uome/pages/user/widgets/signin_content_widget.dart';
+import 'package:uome/providers/user_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 

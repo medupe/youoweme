@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/route_manager.dart';
+
 import 'package:intl/intl.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:wankolota/application/lendee/lendee_application.dart';
-import 'package:wankolota/application/sms/sms_application.dart';
-import 'package:wankolota/application/user/user_application.dart';
-import 'package:wankolota/core/helper/helpers.dart';
-import 'package:wankolota/core/ui/snackbar.dart';
-
-import 'package:wankolota/model/lendee/lendee.dart';
-import 'package:wankolota/pages/lendee/widgets/lendee_list.dart';
-import 'package:wankolota/pages/lendee/widgets/lendee_list_history.dart';
-import 'package:wankolota/providers/lendee_provider.dart';
-import 'package:wankolota/providers/sms_provider.dart';
-import 'package:wankolota/providers/user_provider.dart';
+import 'package:uome/application/lendee/lendee_application.dart';
+import 'package:uome/application/sms/sms_application.dart';
+import 'package:uome/application/user/user_application.dart';
+import 'package:uome/core/helper/helpers.dart';
+import 'package:uome/core/ui/snackbar.dart';
+import 'package:uome/pages/lendee/widgets/lendee_list_history.dart';
+import 'package:uome/providers/lendee_provider.dart';
+import 'package:uome/providers/sms_provider.dart';
+import 'package:uome/providers/user_provider.dart';
 
 class LendeeHistoryPage extends ConsumerWidget {
   LendeeHistoryPage({Key? key}) : super(key: key);

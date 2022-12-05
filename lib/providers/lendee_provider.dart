@@ -1,11 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wankolota/application/lendee/lendee_application.dart';
-
-import 'package:wankolota/core/helper/exceptions.dart';
-import 'package:wankolota/notifier/lendee_notifier.dart';
-
-import 'package:wankolota/providers/user_provider.dart';
-import 'package:wankolota/repository/lendee/lendee_repository.dart';
+import 'package:uome/application/lendee/lendee_application.dart';
+import 'package:uome/core/helper/exceptions.dart';
+import 'package:uome/notifier/lendee_notifier.dart';
+import 'package:uome/providers/user_provider.dart';
+import 'package:uome/repository/lendee/lendee_repository.dart';
 
 final lendeeRepositoryProvider = Provider.autoDispose<LendeeRepository>(
   (ref) => LendeeRepository(ref),

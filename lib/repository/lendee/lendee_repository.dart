@@ -1,11 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:wankolota/model/lendee/lendee.dart';
-import 'package:wankolota/model/lendee_history/lendee_history.dart';
-import 'package:wankolota/repository/general_provider.dart';
-import 'package:wankolota/repository/lendee/i_lendee_repository.dart';
-import 'package:wankolota/extensions/firebase_firestore_extension.dart';
+import 'package:uome/extensions/firebase_firestore_extension.dart';
+import 'package:uome/model/lendee/lendee.dart';
+import 'package:uome/model/lendee_history/lendee_history.dart';
+import 'package:uome/repository/general_provider.dart';
+import 'package:uome/repository/lendee/i_lendee_repository.dart';
 
 class LendeeRepository implements ILendeeRepository {
   final Ref _ref;

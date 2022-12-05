@@ -7,12 +7,12 @@ part of 'bulk_sms.dart';
 // **************************************************************************
 
 _$_BulkSms _$$_BulkSmsFromJson(Map<String, dynamic> json) => _$_BulkSms(
-      to: json['to'] as String,
-      body: json['body'] as String,
+      destination: json['destination'] as String,
+      content: json['content'] as String,
     );
 
 Map<String, dynamic> _$$_BulkSmsToJson(_$_BulkSms instance) =>
     <String, dynamic>{
-      'to': instance.to,
-      'body': instance.body,
+      'destination': instance.destination,
+      'content': instance.content,
     };

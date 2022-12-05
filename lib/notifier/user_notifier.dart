@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wankolota/application/user/user_application.dart';
-import 'package:wankolota/core/helper/exceptions.dart';
-import 'package:wankolota/model/sign_in/sign_in.dart';
-import 'package:wankolota/model/sign_up/sign_up.dart';
-
-import 'package:wankolota/providers/user_provider.dart';
+import 'package:uome/application/user/user_application.dart';
+import 'package:uome/core/helper/exceptions.dart';
+import 'package:uome/model/sign_in/sign_in.dart';
+import 'package:uome/model/sign_up/sign_up.dart';
+import 'package:uome/providers/user_provider.dart';
 
 class UserNotifier extends StateNotifier<UserApplication> {
   final Ref _ref;
